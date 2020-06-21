@@ -1,0 +1,5 @@
+[
+  "https://raw.githubusercontent.com/custom-components/NSWFireRisk/master/custom_components/firerisk/__init__.py",
+  "https://raw.githubusercontent.com/custom-components/NSWFireRisk/master/custom_components/firerisk/manifest.json",
+  "https://raw.githubusercontent.com/custom-components/NSWFireRisk/master/custom_components/firerisk/sensor.py"
+]
