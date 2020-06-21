@@ -1,0 +1,7 @@
+{
+  "domain": "firerisk",
+  "name": "Firerisk",
+  "documentation": "",
+  "dependencies": [],
+  "codeowners": ["@nicholasgk"]
+}
