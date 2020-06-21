@@ -1,13 +1,6 @@
 # NSWFireRisk
 A custom component for [Home Assistant](https://www.home-assistant.io/) which gives the current fire risk for a NSW region.
 
-[![GitHub Release][releases-shield]][releases]
-[![License][license-shield]](LICENSE.md)
-
-![Project Maintenance][maintenance-shield]
-[![GitHub Activity][commits-shield]][commits]
-
-
 To get started put `/custom_components/firerisk/` here:
 `<config directory>/custom_components/firerisk/`
 
