@@ -1,0 +1,15 @@
+name: sensor.firerisk
+description: Home Assistant NSW Fire Risk Rating Sensor
+type: component
+keywords:
+  - sensor
+  - NSW
+  - fire
+  - Australia
+author:
+  name: Nicholas
+  email: nickgithub@ngkmail.com
+  homepage: https://github.com/nicholasgk
+files:
+  - custom_components/firerisk/sensor.py
+  - custom_components/firerisk/manifest.json
