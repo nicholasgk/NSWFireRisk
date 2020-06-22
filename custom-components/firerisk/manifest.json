@@ -1,6 +1,6 @@
 {
   "domain": "firerisk",
-  "name": "Firerisk",
+  "name": "NSW Fire Risk",
   "documentation": "https://github.com/nicholasgk/NSWFireRisk/blob/master/README.md",
   "issue_tracker": "https://github.com/nicholasgk/NSWFireRisk/issues",
   "codeowners": ["@nicholasgk"],
