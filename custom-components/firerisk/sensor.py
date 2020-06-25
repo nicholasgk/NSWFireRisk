@@ -15,7 +15,7 @@ import homeassistant.helpers.config_validation as cv
 from homeassistant.components.sensor import (PLATFORM_SCHEMA)
 from homeassistant.const import (CONF_NAME)
 
-__version__ = '0.0.2'
+__version__ = '0.0.1'
 _LOGGER = logging.getLogger(__name__)
 
 CONF_FEED_URL = 'feed_url'
@@ -57,13 +57,7 @@ class FireRiskSensor(Entity):
         self._name = name
         self._region = region
         self._state = None
-        self._regionName = None
-        self._councils = None
-        self._dangerLevelToday = None
-        self._dangerLevelTomorrow = None
-        self._fireBanToday = None
-        self._fireBanTomorrow = None
-#         self._entries = []
+        self._entries = []
 
 
 
@@ -81,17 +75,17 @@ class FireRiskSensor(Entity):
                 if (int(getText(district.getElementsByTagName('RegionNumber')[0].childNodes)) == int(self._region)):
                     
                     self._state = getText(district.getElementsByTagName('DangerLevelToday')[0].childNodes)
-#                     self._entries = []
+                    self._entries = []
         
-#                     entryValue = {}
-                    self._regionName = getText(district.getElementsByTagName('Name')[0].childNodes)
-#                     entryValue['RegionNumber'] = getText(district.getElementsByTagName('RegionNumber')[0].childNodes)
-                    self._councils = getText(district.getElementsByTagName('Councils')[0].childNodes)
-                    self._dangerLevelToday  = getText(district.getElementsByTagName('DangerLevelToday')[0].childNodes)
-                    self._dangerLevelTomorrow  = getText(district.getElementsByTagName('DangerLevelTomorrow')[0].childNodes)
-                    self._fireBanToday  = getText(district.getElementsByTagName('FireBanToday')[0].childNodes)
-                    self._fireBanTomorrow  = getText(district.getElementsByTagName('FireBanTomorrow')[0].childNodes)
-#                     self._entries.append(entryValue)
+                    entryValue = {}
+                    entryValue['Name'] = getText(district.getElementsByTagName('Name')[0].childNodes)
+                    entryValue['RegionNumber'] = getText(district.getElementsByTagName('RegionNumber')[0].childNodes)
+                    # entryValue['Councils'] = getText(district.getElementsByTagName('Councils')[0].childNodes)
+                    entryValue['DangerLevelToday'] = getText(district.getElementsByTagName('DangerLevelToday')[0].childNodes)
+                    entryValue['DangerLevelTomorrow'] = getText(district.getElementsByTagName('DangerLevelTomorrow')[0].childNodes)
+                    entryValue['FireBanToday'] = getText(district.getElementsByTagName('FireBanToday')[0].childNodes)
+                    entryValue['FireBanTomorrow'] = getText(district.getElementsByTagName('FireBanTomorrow')[0].childNodes)
+                    self._entries.append(entryValue)
                     continue
 
 
@@ -108,34 +102,9 @@ class FireRiskSensor(Entity):
     def icon(self):
         return ICON
 
-#     @property
-#     def device_state_attributes(self):
-#         return {
-#             'entries': self._entries
-#         }
+    @property
+    def device_state_attributes(self):
+        return {
+            'entries': self._entries
+        }
 
-    @property
-    def regionName(self):
-        return self._regionName
-
-    
-    @property
-    def councils(self):
-        return self._councils
-    
-    @property
-    def dangerLevelToday(self):
-        return self._dangerLevelToday
-    
-    @property
-    def dangerLevelTomorrow(self):
-        return self._dangerLevelTomorrow
-    
-    @property
-    def fireBanToday(self):
-        return self._fireBanToday
-    
-    @property
-    def fireBanTomorrow(self):
-        return self._fireBanTomorrow
-    
