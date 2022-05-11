@@ -1,0 +1,4 @@
+{
+    "name": "NSW Fire Risk Rating Sensor",
+    "domains": ["sensor"]
+}
